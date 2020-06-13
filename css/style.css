@@ -1,0 +1,198 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #fff;
+}
+.nav {
+	position: fixed;
+	width: 100%;
+	height: 40px;
+	background: rgba(0,0,0,.8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.nav a {
+	height: 40px;
+	width: 130px;
+	font-size: 16px;
+	font-weight: lighter;
+	text-decoration: none;
+	/*color: #fff;*/
+	color: rgba(255,255,255,.5);
+	text-align: center;
+	line-height: 40px;
+}
+a:hover {
+	color: rgba(255,255,255,1);
+}
+.nav #logo {
+	background: url(../img/apple.svg) no-repeat center;
+	height: 40px;
+}
+.nav #sosuo {
+	background: url(../img/sosuo.svg) no-repeat center;
+	height: 40px;
+}
+.nav #car {
+	background: url(../img/car.svg) no-repeat center;
+	height: 40px;
+}
+.nav #more {
+	height: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+}
+.nav #more #line {
+	height: 1px;
+	width: 19px;
+	background-color: #fff;
+	margin: 6px;
+	display: none;
+	transform-origin: left center;
+	transition: all .5s;
+}
+.navpage {
+	display: flex;
+	width: 100vw;
+	height: 0vh;
+	transition: all 0.8s;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #000;
+}
+.navMain {
+	width: 100%;
+}
+.footer {
+	width: 100%;
+	height: 120px;
+	background: #F5F5F7;
+}
+.footer #fMain {
+	width: 80%;
+	height: 80%;
+	margin: auto;
+	padding-top: 20px;
+}
+#fMain h4 {
+	font-size: 12px;
+	margin-bottom: 5px;
+	color: #999;
+}
+#fMain a {
+	text-decoration: none;
+	color: #4E66D4;
+}
+#fMain p {
+	font-size: 12px;
+	margin: 5px 0;
+	color: #999;
+}
+#fMain h3 {
+	font-size: 12px;
+	color: #666;
+}
+/*.nav #more #line:nth-child(1) {
+	
+}*/
+
+/*小于768像素的样式*/
+@media only screen and (max-width: 768px) {
+/*导航部分的响应式*/
+	.nav #more #line {
+		display: block;
+		order: 1;
+	}
+	.nav #text, .nav #sosuo {
+		display: none;
+	}
+	.nav #logo {
+		order: 2;
+	}
+	.nav #car {
+		order: 3;
+	}
+	.nav {
+		justify-content: space-between;
+	}
+	.nav a {
+		width: 50px;
+	}
+	.nav #more {
+		width: 50px;
+	}
+	#more {
+		z-index: 900;
+		position: relative;
+	}
+	.nav #logo {
+		z-index: 900;
+		position: relative;	
+	}
+	#toggle:checked~#more #line:nth-child(1) {
+		transform: rotate(45deg);
+	}
+	#toggle:checked~#more #line:nth-child(2) {
+		transform: rotate(-45deg);
+	}
+	#toggle:checked~.navpage {
+		display: flex;
+		width: 100vw;  /*vw表示viewport width*/
+		height: 100vh;  /*vh表示viewport height*/
+		position: fixed;
+		left: 0;
+		top: 0px;
+		background: #000;
+		color: #fff;
+		flex-direction: column;
+		padding-top: 50px;
+	}
+	
+	.searchInput {
+		margin: 0 28px 15px;
+		display: flex;
+		background-color: rgba(45,45,45,.98);
+		color: #ccc;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-content: center;
+		height: 36px;
+		border-radius: 4px;
+	}
+	.searchInput .icon {
+		width: 32px;
+		height: 36px;
+		background: url(../img/sosuo.svg) no-repeat center;
+	}
+	.searchInput input {
+		flex: 1;
+		margin: 0 10px;
+		background-color: transparent;
+		outline: none;
+		border: none;
+		color: #fff;
+	}
+	.navList {
+		display: flex;
+		margin: 0px 28px;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	.navList a {
+		width: 100%;
+		height: 44px;
+		text-align: left;
+		border-bottom: 1px solid #333;
+	}
+	.navList a:last-child {
+		border-bottom: none;
+	}
+}
